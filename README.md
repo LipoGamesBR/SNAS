@@ -2,6 +2,8 @@
 
 SNAS (Simple NAS System) é um sistema de armazenamento de arquivos semelhante ao Google Drive, Mega ou MediaFire. Ele permite que os usuários armazenem e compartilhem seus arquivos de forma fácil e conveniente.
 
+![Captura de tela 2023-03-13 124157](https://user-images.githubusercontent.com/73803497/224752688-c69d566e-02e4-469e-be7e-80b409a85f58.png)
+
 ## Funcionalidades
 - [ ] Upload de arquivos
 - [ ] Download de arquivos
