@@ -1,4 +1,4 @@
-import { uuid } from "uuidv4";
+const { v4: uuidv4 } = require('uuid')
 
 export class User {
     public readonly id: string;
@@ -11,7 +11,7 @@ export class User {
         Object.assign(this, props);
 
         if(!id){
-            this.id == uuid();
+            this.id == uuidv4();
         }
     }
 }

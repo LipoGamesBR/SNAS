@@ -1,7 +1,6 @@
-const form = document.querySelector('form');
-const loginBtn = document.querySelector('#login-btn');
+const singup = document.getElementById("sign-btn")
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar o código para autenticar o usuário
-});
+singup.addEventListener("click", function(e) {
+    e.preventDefault()
+    window.location.href = "/register"
+})

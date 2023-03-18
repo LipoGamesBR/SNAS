@@ -1,14 +1,20 @@
-import { Router } from "express";
+import { response, Router } from "express";
+import { request } from "http";
 import path from "path";
-import { send } from "process";
 import { createFileController } from "./useCases/CreateFile";
 import { createUserController } from "./useCases/CreateUser";
+import { loginUserController } from "./useCases/LoginUser";
 
 const router = Router()
 
-router.get('/', (request, response) => {
-    return response.sendFile(path.resolve(__dirname + '/web/index.html'))
+router.get('/login', (request, response) => {
+    return response.sendFile(__dirname + "/web/login.html")
 })
+
+router.post('/login', (request, response) => {
+    return loginUserController.handle(request, response);
+})
+
 
 router.post('/users', (request, response) => {
     return createUserController.handle(request, response);

@@ -1,7 +1,8 @@
+import bcrypt from "bcrypt"
 import { User } from "../../entities/User";
 import { IMailProvider } from "../../providers/IMailProvider";
 import { IUsersRepository } from "../../repositories/IUserRepository";
-import { ICreateUserRequestDTO } from "./CreateUserDTO";
+import { ICreateUserDTO } from "./CreateUserDTO";
 
 export class CreateUserUseCase{
 
@@ -10,7 +11,7 @@ export class CreateUserUseCase{
         private mailProvider: IMailProvider,
     ){}
 
-    async execute(data: ICreateUserRequestDTO){
+    async execute(data: ICreateUserDTO){
 
         const userAlreadyExists = await this.usersRepository.findByEmail(data.email)
 
@@ -19,6 +20,10 @@ export class CreateUserUseCase{
         }
 
         const user = new User(data);
+        
+        const hash = await bcrypt.genSalt(10)
+        user.password = await bcrypt.hash(user.password, hash)
+
         await this.usersRepository.save(user);
 
         await this.mailProvider.sendMail({
