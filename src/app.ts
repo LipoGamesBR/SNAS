@@ -18,12 +18,6 @@ app.use(
     })
 )
 
-declare module 'express-session' {
-    interface SessionData {
-        user: User;
-    }
-}
-
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
