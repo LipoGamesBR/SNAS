@@ -17,4 +17,4 @@ SNAS (Simple NAS System) é um sistema de armazenamento de arquivos semelhante a
 Se você deseja contribuir com o desenvolvimento do SNAS, fique à vontade para enviar uma solicitação de pull. Antes de enviar a solicitação, certifique-se de que seu código esteja em conformidade com as diretrizes de estilo do projeto.
 
 ## Licença
-SNAS é distribuído sob a licença MIT.
+SNAS é distribuído sob a licença Creative Commons - Atribuição-NãoComercial (CC BY-NC).
